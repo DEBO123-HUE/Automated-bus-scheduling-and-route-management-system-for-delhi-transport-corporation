@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+*:focus {
+    outline: none;
+}
+
+/* total part */
+.bus-route-section {
+    /* background-color: white; */
+    background-color: transparent;
+    margin: auto;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+    height: auto;
+}
+
+/* header part */
+.headings {
+    background-color: #007bff;
+    padding: 5px;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* left side logo img */
+.logo-section {
+    width: 14%;
+}
+
+.logo-section img {
+    width: 35px;
+}
+
+/* middle portion DTC name */
+.info-section {
+    width: 75%;
+    color: white;
+}
+
+.headings .info-section p {
+    margin: 0;
+}
+
+/* right side helpline button */
+.helpline-icon {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.helpline-icon button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    line-height: 0;
+    border-radius: 5px;
+    font-size: 1.4rem;
+}
+/* header part ends */
+
+/* search part */
+.search-group {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* it covers circle arrow icons */
+.group1 {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* boarding side circle */
+.img1 {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 12px;
+    color: #ff0000;
+    font-size: 1.1rem;
+}
+
+/* arrow down */
+.img2 {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 5px;
+    font-size: 38px;
+}
+
+/* dropping side circle */
+.img3 {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-top: 5px;
+    color: #218838;
+    font-size: 1.1rem;
+}
+
+/* right sided portion of search */
+.group2 {
+    width: 85%;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+}
+
+/* reset button */
+.input-group button {
+    padding: 5px;
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+/* swap section */
+.swap-section {
+    display: flex;
+    align-items: center;
+}
+
+/* swap button */
+button#swap-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    line-height: 0;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+button#swap-btn:hover {
+    background-color: #218838;
+}
+
+/* search button */
+#search-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* search vai route no. */
+.route-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* left side bus icon */
+.bus-icon {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: white;
+    color: #007bff;
+}
+
+/* middle portion (input) */
+.bus-route-input {
+    width: 70%;
+}
+
+.bus-route-input input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+}
+
+/* right side search button it contains a icon */
+.bus-route-search-btn {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-right: 5px;
+}
+
+.bus-route-search-btn button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    line-height: 0;
+    border-radius: 5px;
+}
+
+.bus-route-search-btn button:hover {
+    background-color: #218838;
+}
+
+/* search history section */
+.search-history {
+    height: auto;
+    width: 100%;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.search-history p {
+    color: #007bff;
+    margin: 0;
+    padding: 5px;
+}
+
+.search-history #search-items {
+    padding: 5px;
+}

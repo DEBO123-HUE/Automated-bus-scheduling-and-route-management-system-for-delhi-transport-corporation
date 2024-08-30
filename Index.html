@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTC Bus App</title>
+    <!-- stylesheet local -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- stylesheet bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <div class="modal">
+        <section class="bus-route-section">
+            <!-- header part where have logo and headings -->
+            <div class="headings">
+                <!-- logo part (left side) -->
+                <div class="logo-section">
+                    <img src="dtc_logo.png" alt="dtc">
+                </div>
+
+                <!-- heading part (middle portion) -->
+                <div class="info-section">
+                    <b>Delhi Transport Corporation</b>
+                    <p>NCT of Delhi</p>
+                </div>
+
+                <!-- helpline icon part (right side) -->
+                <div class="helpline-icon">
+                    <button><i class="bi bi-headset"></i></button>
+                </div>
+            </div>
+            <!-- header part end -->
+
+            <!-- search section -->
+            <div class="search-group">
+                <!-- left side icons circle->arrow->circle -->
+                <div class="group1">
+                    <div class="img1"><i class="bi bi-circle"></i></div>
+                    <div class="img2"><i class="bi bi-arrow-down"></i></div>
+                    <div class="img3"><i class="bi bi-circle"></i></div>
+                </div>
+
+                <!-- rigth side search input credentials -->
+                <div class="group2">
+                    <!-- boarding point search bar & reset button -->
+                    <div class="input-group">
+                        <form action="">
+                            <input type="text" id="from-station" placeholder="Boarding Point">
+                            <button type="reset">&times;</button>
+                        </form>
+                    </div>
+
+                    <!-- swap button and its designing section -->
+                    <div class="swap-section">
+                        <div class="line1" style="width: 70%; border: 1px solid #28a745;"></div>
+                        <button id="swap-btn"><i class="bi bi-arrow-down-up"></i></button>
+                        <div class="line2" style="width: 17%; border: 1px solid #28a745;"></div>
+                    </div>
+
+                    <!-- dropping point search bar & reset button -->
+                    <div class="input-group">
+                        <form action="">
+                            <input type="text" id="to-station" placeholder="Dropping Point">
+                            <button type="reset">&times;</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- search button -->
+            <button id="search-btn">Search Buses</button>
+            <!-- search section ends -->
+
+            <!-- finding bus by route no. that section starts -->
+            <div class="route-search">
+                <!-- this is the icon of the bus in the left side -->
+                <div class="bus-icon"><i class="bi bi-bus-front"></i></div>
+
+                <!-- this is the search bar in the middle portion -->
+                <div class="bus-route-input">
+                    <input type="text" name="bus-route" id="bus-route-no" placeholder="Bus Route No.">
+                </div>
+
+                <!-- this is the search icon which is clickable that search the route no. that entered -->
+                <div class="bus-route-search-btn">
+                    <button><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+            <!-- section ends (route no. search) -->
+
+            <!-- this section will fill what search in previous -->
+            <div class="search-history">
+                <p>SEARCH HISTORY</p>
+                
+                <!-- here previous search will show -->
+                <div id="search-items"></div>
+            </div>
+            <!-- previous searching section ends -->
+
+            
+        </section>
+    </div>
+</body>
+</html>
