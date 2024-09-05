@@ -1,64 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fromStationInput = document.getElementById('from-station');
     const toStationInput = document.getElementById('to-station');
-    const swapButton = document.getElementById('swap-btn');
-    const searchButton = document.getElementById('search-btn');
-    const busRouteSearchButton = document.querySelector('.bus-route-search-btn button');
-    const busRouteInput = document.getElementById('bus-route-no');
-    const searchHistoryContainer = document.getElementById('search-items');
+    const swapBtn = document.getElementById('swap-btn');
+    const searchBtn = document.getElementById('search-btn');
+    const busRouteNoInput = document.getElementById('bus-route-no');
+    const searchItems = document.getElementById('search-items');
+    const emergencyBtn = document.getElementById('emergency-btn');
+    const availabilityStatus = document.getElementById('availability-status');
+    const dateTimeSpan = document.getElementById('date-time'); // Correct ID here
+    const resetButtons = document.querySelectorAll('.reset-btn');
 
-    // Swap boarding and dropping points
-    swapButton.addEventListener('click', () => {
-        const fromValue = fromStationInput.value;
-        fromStationInput.value = toStationInput.value;
-        toStationInput.value = fromValue;
-    });
-
-    // Search Buses based on boarding and dropping points
-    searchButton.addEventListener('click', () => {
-        const fromStation = fromStationInput.value.trim();
-        const toStation = toStationInput.value.trim();
-
-        if (fromStation && toStation) {
-            addToSearchHistory(`Bus from ${fromStation} to ${toStation}`);
-        } else {
-            alert('Please enter both Boarding and Dropping points.');
-        }
-    });
-
-    // Search Buses based on route number
-    busRouteSearchButton.addEventListener('click', () => {
-        const routeNumber = busRouteInput.value.trim();
-
-        if (routeNumber) {
-            addToSearchHistory(`Route No: ${routeNumber}`);
-        } else {
-            alert('Please enter a Bus Route Number.');
-        }
-    });
-
-    // Add searches to history
-    function addToSearchHistory(searchTerm) {
-        const searchItem = document.createElement('div');
-        searchItem.textContent = searchTerm;
-        searchItem.classList.add('search-item');
-
-        searchHistoryContainer.appendChild(searchItem);
-
-        // Optional: Clear input fields after search
-        fromStationInput.value = '';
-        toStationInput.value = '';
-        busRouteInput.value = '';
+    // Function to update date and time
+    function updateDateTime() {
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        dateTimeSpan.textContent = now.toLocaleDateString('en-US', options);
     }
 
-    // Handle reset buttons in search inputs
-    document.querySelectorAll('.input-group button[type="reset"]').forEach((resetButton, index) => {
-        resetButton.addEventListener('click', () => {
-            if (index === 0) {
-                fromStationInput.value = '';
-            } else {
-                toStationInput.value = '';
-            }
+    updateDateTime();
+    setInterval(updateDateTime, 1000); // Update every second
+
+    // Functionality to swap 'from' and 'to' stations
+    swapBtn.addEventListener('click', () => {
+        const temp = fromStationInput.value;
+        fromStationInput.value = toStationInput.value;
+        toStationInput.value = temp;
+    });
+
+    // Reset button functionality for clearing the input fields
+    resetButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const inputField = event.target.previousElementSibling;
+            inputField.value = '';
         });
+    });
+
+    // Functionality for search button
+    searchBtn.addEventListener('click', () => {
+        const from = fromStationInput.value.trim();
+        const to = toStationInput.value.trim();
+
+        if (from && to) {
+            const item = document.createElement('div');
+            item.classList.add('search-item');
+            item.textContent = `${from} to ${to}`;
+            searchItems.appendChild(item);
+
+            // Placeholder for checking bus availability
+            checkBusAvailability(from, to);
+        } else {
+            alert('Please enter both boarding and dropping points.');
+        }
+    });
+
+    function checkBusAvailability(from, to) {
+        // Placeholder for bus availability check
+        // Simulate a bus availability check (In a real app, you would make a network request here)
+        const isBusAvailable = Math.random() > 0.5;
+
+        if (isBusAvailable) {
+            availabilityStatus.textContent = '';
+        } else {
+            availabilityStatus.textContent = 'No buses available in this area.';
+        }
+    }
+
+    // Function for emergency button
+    emergencyBtn.addEventListener('click', () => {
+        alert('Emergency triggered! Connecting to server...');
+        // Simulate server connection
+        setTimeout(() => {
+            alert('Sending your live location to the alternate mobile number.');
+            // Server-side code needed to send location details and notify the customer
+        }, 2000); // Simulate server response delay
     });
 });
