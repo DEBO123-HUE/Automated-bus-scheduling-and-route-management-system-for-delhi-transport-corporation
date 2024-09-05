@@ -3,212 +3,200 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.1);
+    background: url('bus_background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-*:focus {
-    outline: none;
+#loading {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-align: center;
+    margin: 20px 0;
 }
 
-/* total part */
-.bus-route-section {
-    /* background-color: white; */
-    background-color: transparent;
-    margin: auto;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 350px;
-    text-align: left;
-    height: auto;
-}
-
-/* header part */
-.headings {
-    background-color: #007bff;
-    padding: 5px;
-    display: flex;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-/* left side logo img */
-.logo-section {
-    width: 14%;
-}
-
-.logo-section img {
-    width: 35px;
-}
-
-/* middle portion DTC name */
-.info-section {
-    width: 75%;
-    color: white;
-}
-
-.headings .info-section p {
-    margin: 0;
-}
-
-/* right side helpline button */
-.helpline-icon {
-    width: 10%;
+.modal {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+   
+
+.bus-route-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: auto;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: headerAnimation 5s infinite alternate;
 }
 
-.helpline-icon button {
-    background-color: transparent;
+@keyframes headerAnimation {
+    from {
+        background-color: #007bff;
+    }
+    to {
+        background-color: #0056b3;
+    }
+}
+
+.headings {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #007bff, #00d2d3);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.logo-section img {
+    width: 40px;
+}
+
+.info-section {
+    flex-grow: 1;
+    color: white;
+    text-align: center;
+}
+
+.info-section b {
+    font-size: 1.2rem;
+}
+
+.info-section p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.emergency-icon {
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.emergency-icon button {
+    background-color: red;
     border: none;
     color: white;
-    cursor: pointer;
-    padding: 10px;
-    line-height: 0;
+    font-size: 1rem;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-size: 1.4rem;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    display: inline-block;
 }
-/* header part ends */
 
-/* search part */
+.date-time {
+    margin-bottom: 15px;
+}
+
+.date-time p {
+    font-size: 1rem;
+    color: #007bff;
+}
+
 .search-group {
     display: flex;
     background-color: white;
     border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
-/* it covers circle arrow icons */
 .group1 {
-    width: 15%;
     display: flex;
     flex-direction: column;
-    height: 100%;
-}
-
-/* boarding side circle */
-.img1 {
-    display: flex;
     justify-content: center;
-    align-items: end;
-    padding-top: 12px;
-    color: #ff0000;
-    font-size: 1.1rem;
+    align-items: center;
+    width: 20%;
 }
 
-/* arrow down */
-.img2 {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    padding-top: 5px;
-    font-size: 38px;
+.group1 i {
+    font-size: 2.5rem;
 }
 
-/* dropping side circle */
-.img3 {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    padding-top: 5px;
-    color: #218838;
-    font-size: 1.1rem;
-}
-
-/* right sided portion of search */
 .group2 {
-    width: 85%;
+    flex-grow: 1;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 input {
-    width: 80%;
+    flex-grow: 1;
     padding: 10px;
-    border: none;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
 }
 
-/* reset button */
 .input-group button {
-    padding: 5px;
+    margin-left: 10px;
+    padding: 0 10px;
     font-size: 1.5rem;
-    background-color: white;
-    color: black;
+    background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-/* swap section */
 .swap-section {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 10px 0;
 }
 
-/* swap button */
-button#swap-btn {
+.swap-section button {
     background-color: #28a745;
     color: white;
     padding: 10px;
-    line-height: 0;
-    border-radius: 25px;
+    border-radius: 50%;
     border: none;
     cursor: pointer;
+    margin: 0 10px;
 }
 
-button#swap-btn:hover {
-    background-color: #218838;
-}
-
-/* search button */
 #search-btn {
     width: 100%;
-    margin-top: 10px;
     background-color: #007bff;
     color: white;
+    padding: 10px;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
-/* search vai route no. */
 .route-search {
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: white;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
-/* left side bus icon */
 .bus-icon {
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    background-color: white;
+    font-size: 1.5rem;
     color: #007bff;
-}
-
-/* middle portion (input) */
-.bus-route-input {
-    width: 70%;
+    margin-right: 10px;
 }
 
 .bus-route-input input {
-    width: 80%;
+    width: 100%;
     padding: 10px;
-    border: none;
-}
-
-/* right side search button it contains a icon */
-.bus-route-search-btn {
-    width: 20%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 1.2rem;
-    padding-right: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
 }
 
 .bus-route-search-btn button {
@@ -217,30 +205,32 @@ button#swap-btn:hover {
     border: none;
     cursor: pointer;
     padding: 10px;
-    line-height: 0;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
-.bus-route-search-btn button:hover {
-    background-color: #218838;
-}
-
-/* search history section */
 .search-history {
-    height: auto;
-    width: 100%;
-    max-width: 350px;
-    background-color: white;
+    padding: 10px;
+    background-color: #f8f9fa;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
 .search-history p {
-    color: #007bff;
-    margin: 0;
-    padding: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.search-history #search-items {
+.search-item {
     padding: 5px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+#availability-status {
+    font-weight: bold;
+    color: red;
+}
+
+#search-items {
+    max-height: 200px;
+    overflow-y: auto;
 }
